@@ -29,6 +29,7 @@ class PhabricatorOAuth2Callback(OAuth2Callback):
 
 
 class PhabricatorOAuth2Provider(OAuth2Provider):
+    name = 'Phabricator'
     access_token_url = ACCESS_TOKEN_URL
     authorize_url = AUTHORIZE_URL
     client_id = CLIENT_ID
