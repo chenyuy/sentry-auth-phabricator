@@ -38,7 +38,6 @@ class PhabricatorOAuth2Provider(OAuth2Provider):
     def __init__(self, **config):
         super(PhabricatorOAuth2Provider, self).__init__(**config)
 
-    
     def get_configure_view(self):
         return PhabricatorConfigureView.as_view()
 
@@ -47,6 +46,7 @@ class PhabricatorOAuth2Provider(OAuth2Provider):
             OAuth2Login(
                 authorize_url=self.authorize_url,
                 client_id=self.client_id,
+                scope='whoami',
             ),
             PhabricatorOAuth2Callback(
                 access_token_url=self.access_token_url,
